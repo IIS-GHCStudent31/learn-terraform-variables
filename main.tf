@@ -4,6 +4,15 @@ terraform {
       source = "hashicorp/aws"
     }
   }
+
+/*
+  cloud {
+    organization = "policy-as-code-training"
+    workspaces {
+      name = "tf-vault-qa-ag-10062026"
+    }
+}
+*/
 }
 
 provider "aws" {
@@ -118,4 +127,14 @@ module "ec2_instances" {
     project     = "project-alpha",
     environment = "dev"
   }
+}
+
+variable "instance_type" {
+  description = "EC2 instance type"
+  type        = string
+}
+
+variable "instance_count" {
+  description = "Number of EC2 instances to create"
+  type        = number
 }
