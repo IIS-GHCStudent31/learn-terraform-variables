@@ -138,3 +138,8 @@ variable "instance_count" {
   description = "Number of EC2 instances to create"
   type        = number
 }
+
+module "s3_bucket" {
+  source      = "app.terraform.io/policy-as-code-training/s3-bucket-ag/aws"
+  bucket_name = "my-bucket"
+}
