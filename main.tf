@@ -139,7 +139,10 @@ variable "instance_count" {
   type        = number
 }
 
-module "s3_bucket" {
-  source      = "app.terraform.io/policy-as-code-training/s3-bucket-ag/aws"
-  bucket_name = "my-bucket"
+
+module "AarronS3" {
+  source  = "app.terraform.io/policy-as-code-training/AarronS3/AWS"
+  bucket_name = "aarron-bucket-10072026"
+  version = "1.0.0"
+  # insert required variables here
 }
